@@ -1,0 +1,95 @@
+/* ====================
+   FUENTE Y CONFIGURACIÓN BASE
+==================== */
+.reserva-estadias {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212; /* Fondo oscuro */
+    color: #ffffff; /* Texto blanco */
+    margin: 0;
+    padding: 0;
+}
+
+/* ====================
+   TIPOGRAFÍA
+==================== */
+.reserva-estadias h1, 
+.reserva-estadias h2 {
+    color: #00aaff; /* Azul brillante para títulos */
+}
+
+.reserva-estadias p {
+    color: #cccccc; /* Texto gris claro */
+}
+
+/* ====================
+   CONTENEDOR PRINCIPAL
+==================== */
+.reserva-estadias .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ====================
+   GALERÍA DE TARJETAS
+==================== */
+.reserva-estadias .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* ====================
+   TARJETAS
+==================== */
+.reserva-estadias .card {
+    background-color: #1e1e1e; /* Fondo de tarjeta oscuro */
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 20px 0;
+    transition: transform 0.3s;
+}
+
+.reserva-estadias .card:hover {
+    transform: scale(1.05); /* Efecto de hover */
+}
+
+.reserva-estadias .card img {
+    width: 100%;
+    height: auto;
+}
+
+.reserva-estadias .card-content {
+    padding: 15px;
+}
+
+.reserva-estadias .card-title {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.reserva-estadias .card-description {
+    margin: 10px 0;
+}
+
+.reserva-estadias .card-price {
+    font-size: 1.2em;
+    color: #00aaff; /* Azul para el precio */
+}
+
+/* ====================
+   BOTÓN DE COMPRA
+==================== */
+.reserva-estadias .buy-btn {
+    background-color: #00aaff; /* Azul brillante */
+    color: #ffffff; /* Texto blanco */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.reserva-estadias .buy-btn:hover {
+    background-color: #0088cc; /* Azul más oscuro al pasar el mouse */
+}

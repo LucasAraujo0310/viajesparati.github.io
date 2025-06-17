@@ -1,0 +1,185 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+  /* Root and variables */
+  :root {
+    --color-blue-dark: #0d1b2a;
+    --color-blue-mid: #1b263b;
+    --color-black: #000000;
+    --color-white: #e0e0e0;
+    --color-accent: #3a84ff;
+    --spacing-base: 16px;
+    --border-radius: 10px;
+    --transition: 0.3s ease;
+  }
+
+  /* Reset & base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, var(--color-blue-dark), var(--color-black));
+    min-height: 100vh;
+    color: var(--color-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-base);
+  }
+
+  /* Container */
+  #app {
+    max-width: 600px;
+    width: 100%;
+    background: var(--color-blue-mid);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 30px rgba(58, 132, 255, 0.5);
+    padding: 2rem;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    color: var(--color-accent);
+  }
+
+  /* Login */
+  #login-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-base);
+  }
+
+  #login-section label {
+    font-weight: 600;
+  }
+
+  #login-section input[type="password"] {
+    padding: 0.75rem 1rem;
+    border-radius: var(--border-radius);
+    border: none;
+    font-size: 1rem;
+    outline-offset: 2px;
+    outline-color: var(--color-accent);
+  }
+
+  #login-section button {
+    background-color: var(--color-accent);
+    border: none;
+    color: var(--color-white);
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.75rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color var(--transition);
+  }
+
+  #login-section button:hover,
+  #login-section button:focus {
+    background-color: #2a5df7;
+  }
+
+  /* Product Admin */
+  #admin-section {
+    display: none;
+    flex-direction: column;
+    gap: var(--spacing-base);
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-base);
+  }
+
+  label {
+    font-weight: 600;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="file"],
+  textarea {
+    padding: 0.75rem 1rem;
+    border-radius: var(--border-radius);
+    border: none;
+    font-size: 1rem;
+    outline-offset: 2px;
+    outline-color: var(--color-accent);
+    background-color: var(--color-blue-dark);
+    color: var(--color-white);
+    resize: vertical;
+  }
+
+  textarea {
+    min-height: 80px;
+  }
+
+  button[type="submit"] {
+    background-color: var(--color-accent);
+    border: none;
+    color: var(--color-white);
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.75rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color var(--transition);
+  }
+
+  button[type="submit"]:hover,
+  button[type="submit"]:focus {
+    background-color: #2a5df7;
+  }
+
+  /* Product list */
+  #product-list {
+    margin-top: 2rem;
+  }
+
+  .product-card {
+    background: var(--color-blue-dark);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 15px rgba(58, 132, 255, 0.4);
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .product-image {
+    width: 80px;
+    height: 80px;
+    background-color: var(--color-blue-mid);
+    border-radius: var(--border-radius);
+    object-fit: cover;
+  }
+
+  .product-details {
+    color: var(--color-white);
+  }
+
+  .product-details strong {
+    display: inline-block;
+    width: 80px;
+    color: var(--color-accent);
+  }
+
+  /* Responsive and accessibility */
+  @media (max-width: 480px) {
+    .product-card {
+      grid-template-columns: 1fr;
+    }
+    .product-image {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1/1;
+    }
+  }

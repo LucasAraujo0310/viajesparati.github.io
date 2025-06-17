@@ -1,0 +1,181 @@
+
+
+  .flight-app *,
+  .flight-app *::before,
+  .flight-app *::after {
+    box-sizing: border-box;
+  }
+
+  .flight-app {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0a0f1a;
+    color: #cbd5e1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
+  }
+
+  .flight-app .container {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 32px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    min-height: 100vh;
+    justify-content: center;
+  }
+
+  .flight-app header {
+    text-align: center;
+    padding-bottom: 16px;
+  }
+
+  .flight-app header h1 {
+    font-weight: 600;
+    font-size: 3rem;
+    color: #3b82f6;
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+  }
+
+  .flight-app header p {
+    font-weight: 400;
+    font-size: 1.125rem;
+    color: #94a3b8;
+  }
+
+  .flight-app form.flight-form {
+    background: rgba(14, 23, 50, 0.8);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 12px 36px rgba(59, 130, 246, 0.5);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 32px;
+  }
+
+  @media (max-width: 640px) {
+    .flight-app form.flight-form {
+      grid-template-columns: 1fr;
+      padding: 24px 16px;
+      gap: 20px;
+    }
+  }
+
+  .flight-app .input-group {
+    position: relative;
+  }
+
+  .flight-app .input-group input,
+  .flight-app .input-group select {
+    width: 100%;
+    padding: 16px 48px 16px 16px;
+    border-radius: 12px;
+    border: 2px solid #1e40af;
+    background-color: #0a0f1a;
+    color: #cbd5e1;
+    font-size: 1rem;
+    outline-offset: 2px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .flight-app .input-group input:focus,
+  .flight-app .input-group select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 8px #3b82f6aa;
+  }
+
+  .flight-app .input-group label {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    font-size: 1rem;
+    pointer-events: none;
+    user-select: none;
+    transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+    background-color: transparent;
+    padding: 0 4px;
+  }
+
+  .flight-app .input-group input:not(:placeholder-shown) + label,
+  .flight-app .input-group input:focus + label,
+  .flight-app .input-group select:not([value=""]) + label,
+  .flight-app .input-group select:focus + label {
+    top: 4px;
+    font-size: 0.75rem;
+    color: #3b82f6;
+    background-color: #0a0f1a;
+  }
+
+  .flight-app .input-icon {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #3b82f6;
+    pointer-events: none;
+  }
+
+  .flight-app button[type="submit"] {
+    grid-column: 1 / -1;
+    background: linear-gradient(90deg, #3b82f6, #2563eb);
+    color: #e0e7ff;
+    font-weight: 600;
+    font-size: 1.25rem;
+    padding: 16px 0;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease;
+    box-shadow: 0 6px 12px rgba(59,130,246,0.5);
+  }
+
+  .flight-app button[type="submit"]:hover,
+  .flight-app button[type="submit"]:focus {
+    background: linear-gradient(90deg, #2563eb, #3b82f6);
+    box-shadow: 0 10px 20px rgba(59,130,246,0.8);
+    transform: translateY(-3px);
+    outline: none;
+  }
+
+  .flight-app button[type="submit"]:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 12px rgba(59,130,246,0.5);
+  }
+
+  .flight-app button:focus-visible,
+  .flight-app input:focus-visible,
+  .flight-app select:focus-visible {
+    outline: 3px solid #60a5fa;
+    outline-offset: 2px;
+  }
+
+  .flight-app .images-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    border-radius: 16px;
+  }
+
+  .flight-app .images-gallery img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
+    display: block;
+  }
+
+  @media (max-width: 640px) {
+    .flight-app .images-gallery {
+      grid-template-columns: 1fr;
+    }
+    .flight-app .images-gallery img {
+      height: 160px;
+    }
+  }

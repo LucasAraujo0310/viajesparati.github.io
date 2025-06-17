@@ -1,0 +1,237 @@
+ /* Reset and base */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: #010a1e;
+      color: #e1e8f7;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      position: relative;
+    }
+    h1 {
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+      color: #60a5fa; /* blue-400 */
+      text-align: center;
+    }
+    p.subtitle {
+      color: #94a3b8; /* blue-gray-400 */
+      font-size: 1.125rem;
+      margin-bottom: 32px;
+      text-align: center;
+      max-width: 400px;
+      line-height: 1.4;
+    }
+
+    .container {
+      background: linear-gradient(135deg, #0a1128, #11294c);
+      border-radius: 16px;
+      box-shadow: 0 12px 24px rgba(9, 24, 71, 0.75);
+      padding: 32px 32px 56px;
+      max-width: 420px;
+      width: 100%;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    label {
+      display: flex;
+      flex-direction: column;
+      font-size: 0.9rem;
+      color: #93c5fd; /* blue-300 */
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    input[type="month"],
+    input[type="password"],
+    input[type="number"] {
+      background-color: #152741;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-size: 1rem;
+      color: #cbd5e1;
+      transition: box-shadow 0.3s ease;
+      outline-offset: 2px;
+      outline-color: transparent;
+    }
+    input[type="text"]:focus,
+    input[type="tel"]:focus,
+    input[type="email"]:focus,
+    input[type="month"]:focus,
+    input[type="password"]:focus,
+    input[type="number"]:focus {
+      box-shadow: 0 0 0 3px #2563eb; /* blue-600 outline */
+      outline-color: #2563eb;
+      color: #e0e7ff;
+      background-color: #1e3a8a;
+    }
+    ::placeholder {
+      color: #94a3b8;
+      opacity: 1; /* Override Firefox */
+    }
+
+    .row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .row > div {
+      flex: 1 1 50%;
+    }
+
+    button[type='submit'] {
+      margin-top: 24px;
+      padding: 14px 0;
+      font-size: 1.125rem;
+      font-weight: 700;
+      background: #1e40af; /* blue-800 */
+      color: white;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      box-shadow: 0 8px 16px rgb(30 64 175 / 0.5);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    button[type='submit']:hover,
+    button[type='submit']:focus {
+      background: #2563eb; /* blue-600 */
+      transform: translateY(-2px);
+      outline: none;
+    }
+    button[type='submit']:active {
+      transform: translateY(0);
+      background: #1e40af; /* blue-800 */
+    }
+
+    /* Payment logos */
+    .payment-methods {
+      margin-top: 36px;
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .payment-methods img {
+      height: 36px;
+      filter: brightness(100%) contrast(110%);
+      transition: filter 0.3s ease;
+      object-fit: contain;
+      aspect-ratio: auto 1 / 0.4;
+      cursor: default;
+    }
+    .payment-methods img:hover {
+      filter: brightness(130%) contrast(120%);
+    }
+
+    /* Card brand display container next to card number */
+    .card-brand-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .card-brand-logo {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 28px;
+      width: auto;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      opacity: 0;
+    }
+    .card-brand-logo.visible {
+      opacity: 1;
+    }
+    /* Exit button top left */
+    .exit-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: rgba(30, 64, 175, 0.85);
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(30, 64, 175, 0.5);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      z-index: 100;
+    }
+    .exit-button:hover,
+    .exit-button:focus {
+      background: #2563eb;
+      transform: scale(1.1);
+      outline: none;
+    }
+    .exit-button:active {
+      transform: scale(1);
+      background: rgba(30, 64, 175, 0.85);
+    }
+    .exit-button .material-icons {
+      color: white;
+      font-size: 28px;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .container {
+        padding: 24px 20px 56px;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      p.subtitle {
+        font-size: 1rem;
+        max-width: 100%;
+      }
+      .row > div {
+        flex: 1 1 100%;
+      }
+      /* Adjust card number container for smaller screens */
+      .card-brand-container {
+        display: block;
+      }
+      .card-brand-logo {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        margin-top: 8px;
+        height: 32px;
+      }
+      /* Exit button smaller on mobile */
+      .exit-button {
+        width: 40px;
+        height: 40px;
+        top: 16px;
+        left: 16px;
+      }
+      .exit-button .material-icons {
+        font-size: 24px;
+      }
+    }

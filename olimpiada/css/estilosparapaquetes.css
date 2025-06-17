@@ -1,0 +1,150 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+  /* Reset & base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #0a0f23;
+    color: #d0d8f9;
+    line-height: 1.5;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 16px;
+  }
+
+  /* Header */
+  header {
+    text-align: center;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #132a67;
+  }
+  header h1 {
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #2ea0ff;
+    margin-bottom: 8px;
+  }
+  header p {
+    font-size: 1.125rem;
+    color: #aabbff;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Package grid */
+  .packages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 32px;
+    margin-top: 48px;
+  }
+
+  /* Card style */
+  .package {
+    background: #10183f;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 16px rgb(46 160 255 / 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .package:hover,
+  .package:focus-within {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 32px rgb(46 160 255 / 0.4);
+  }
+
+  /* Package image */
+  .package img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    object-fit: cover;
+  }
+
+  /* Package title */
+  .package h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #52aaff;
+    margin-bottom: 12px;
+  }
+
+  /* Package description */
+  .package p.description {
+    flex-grow: 1;
+    font-size: 1rem;
+    color: #adbeff;
+    margin-bottom: 16px;
+  }
+
+  /* Features list */
+  .features {
+    list-style: none;
+    padding-left: 0;
+    margin: 0 0 24px 0;
+    color: #7e99ff;
+    font-size: 0.9rem;
+  }
+  .features li {
+    margin-bottom: 8px;
+  }
+
+  /* Price & button container */
+  .buy-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Price */
+  .price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2ea0ff;
+  }
+
+  /* Book Now button */
+  .btn-book {
+    background: linear-gradient(135deg,#2ea0ff, #0f4dc0);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-align: center;
+    min-width: 120px;
+  }
+  .btn-book:hover,
+  .btn-book:focus {
+    background: linear-gradient(135deg,#1a75ff, #073b8c);
+    outline: none;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 2rem;
+    }
+    .btn-book {
+      min-width: auto;
+      padding: 12px 16px;
+    }
+  }
